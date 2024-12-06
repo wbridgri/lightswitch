@@ -1,8 +1,13 @@
 
 
-let light = true;
+let light;
 onBtn = document.getElementById('onBtn');
 offBtn = document.getElementById('offBtn');
+
+
+
+
+
 
 
 
@@ -17,6 +22,7 @@ onBtn.addEventListener('click', ()=> {
         
     }else {
         light = true;
+        console.log(light)
         document.getElementById('heading').innerHTML = 'Light is Off';
         document.body.style.backgroundColor = "#000"
         document.body.style.color = "#fff"
@@ -26,19 +32,24 @@ onBtn.addEventListener('click', ()=> {
 
 })
 
-offBtn.addEventListener('click', ()=>{
-    if(light === false) {
-        light = true;
-        console.log(light);
-        document.getElementById('heading').innerHTML = 'Light is Off';
-        document.body.style.backgroundColor = "#000";
-        document.body.style.color = "#fff";
-    
-    }else {
+offBtn.addEventListener('click', ()=> {
+    if(light === true) {
         light = false;
+        console.log(light)
         document.getElementById('heading').innerHTML = 'Light is On';
-        document.body.style.backgroundColor = "#000";
-        document.body.style.color = "#fff";
+        document.body.style.backgroundColor = "#fff"
+        document.body.style.color = "#000"
+        
+    }else {
+        light = true;
+        console.log(light)
+        document.getElementById('heading').innerHTML = 'Light is Off';
+        document.body.style.backgroundColor = "#000"
+        document.body.style.color = "#fff"
+    
 
     }
+
 })
+
+
